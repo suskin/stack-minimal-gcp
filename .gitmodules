@@ -1,4 +1,0 @@
-[submodule "stack-cicd"]
-	path = stack-cicd
-	url = https://github.com/suskin/stack-cicd
-	branch = add-jenkinsfiles
