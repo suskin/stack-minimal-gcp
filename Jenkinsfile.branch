@@ -1,7 +1,15 @@
+// This loads Jenkins libraries from an external repository. 
+// The identifier is arbitrary, but it seems like using the same name as the repository
+// is intuitive.
+//
+// The version is required.
+//
+// For more details, see:
 // https://jenkins.io/doc/book/pipeline/shared-libraries/#defining-declarative-pipelines
-library identifier: 'stackBranch@add-jenkinsfiles', retriever: modernSCM(
+library identifier: 'stack-cicd@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/suskin/stack-cicd',
    credentialsId: 'github-upbound-jenkins'])
 
-stackBranch
+// This is the name of a file declared in vars/{{fileName}}.groovy in the library repository.
+runStackBranchPipeline()
