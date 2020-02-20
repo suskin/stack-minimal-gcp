@@ -1,0 +1,7 @@
+// https://jenkins.io/doc/book/pipeline/shared-libraries/#defining-declarative-pipelines
+library identifier: 'stackBranch@add-jenkinsfiles', retriever: modernSCM(
+  [$class: 'GitSCMSource',
+   remote: 'https://github.com/suskin/stack-cicd',
+   credentialsId: 'github-upbound-jenkins'])
+
+stackBranch
